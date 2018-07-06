@@ -12,3 +12,5 @@ This is a practice project for passing data using the Fragment Object.
 While the Bundle Object is usually used to pass Primitive Data Types (String, int, float, long) the 
 Fragment Object can not only be used to pass Primitive Data Types but also to pass Non-Primitive Data Types 
 (HashMap, ArrayList, and custom Class like Employee or Student)
+
+Video: https://youtu.be/tvP7Xz1s9YU
