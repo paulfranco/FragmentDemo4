@@ -19,15 +19,15 @@ public class FragmentA extends Fragment {
     private Button btnAdd;
     private TextView txvResult;
 
+    // initialize private variables to be used in the custom method with default value
+    private int firstNumber = 0, secondNumber = 0;
+
+    // Initialize private variable employee
+    private MainActivity.Employee employee;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_a, container, false);
-
-        // Get the reference to the incoming Bundle Object
-        Bundle bundle = getArguments();
-        // use a default value in case the method fails to find the associated with the key to prevent the app from crashing (Prevent an null pointer exception)
-        final int firstNum = bundle.getInt(Constants.FIRST_NUM, 0);
-        final int secondNum = bundle.getInt(Constants.SECOND_NUM, 0);
 
         // Complete initialization of the button and text view
         // Inside the FragmentA.java findViewBYId() method does not exists. for that purpose we need to make use of the ( view )
@@ -38,7 +38,7 @@ public class FragmentA extends Fragment {
             @Override
             public void onClick(View v) {
                 // Code to add the Two Numbers passed in
-                addTwoNumbers(firstNum, secondNum);
+                addTwoNumbers(firstNumber, secondNumber);
             }
         });
 
@@ -51,5 +51,15 @@ public class FragmentA extends Fragment {
         txvResult.setText("Result: " + result);
     }
 
+    // Custom Method
+    public void setData(int firstNumber, int secondNumber) {
 
+        this.firstNumber = firstNumber;
+        this.secondNumber = secondNumber;
+
+    }
+
+    public void setEmployeeObj(MainActivity.Employee employee) {
+        this.employee = employee; // Use this obj
+    }
 }
